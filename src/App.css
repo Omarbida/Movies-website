@@ -1,0 +1,93 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+body{
+  background-color: rgb(124, 124, 124);
+}
+.head{
+  background-color: rgb(124, 124, 124);
+  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.349) ;
+  display: flex;
+  flex-direction: column;
+  height: 15vh;
+  justify-content: space-between;
+  padding-top: 10px;
+  align-items: center;
+}
+.filters{
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 40px;
+}
+.filters button{
+  height: 100%;
+  width: 20%;
+  border: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 1.5em;
+  padding-bottom: 2px;
+  transition: all 0s ease-in-out;
+  border-radius: 8px 8px 0 0;
+}
+.filters button:hover{
+  border-bottom: 2px solid rgb(54, 54, 54);
+  padding-bottom: 0px;
+}
+.search-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 40px;
+  gap: 20px;
+}
+.search-container button{
+  height: 100%;
+  background-color: transparent;
+  border: none;
+}
+.search-container button:hover{
+  scale: 110%;
+}
+.search-container input{
+  height: 100%;
+  width: 40%;
+  padding: 5px;
+  border-radius: 3px;
+  border:none ;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.425);
+  font-size: 1.3em;
+}
+.search-container input:focus{
+  outline: none;
+}
+button.selected{
+  background: linear-gradient(90deg,rgb(124, 124, 124),rgb(90, 89, 89),rgb(90, 89, 89),rgb(124, 124, 124));
+}
+.content{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+}
+.movies{
+  padding:20px ;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+ 
+}
+.movies.sided {
+  width: 50%;
+  overflow-y: scroll;
+  height:1000px ;
+ justify-content: center;
+}
+
+
