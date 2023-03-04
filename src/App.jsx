@@ -3,7 +3,7 @@ import Card from "./components/Card";
 import "./App.css";
 import Head from "./components/Head";
 import MoreInfo from "./components/MoreInfo";
-import { ChevronRight, ChevronLeft } from "react-feather";
+import { ChevronRight, ChevronLeft ,FileMinus} from "react-feather";
 
 function App() {
   const [showInfo, setShowInfo] = useState(false);
@@ -27,30 +27,29 @@ function App() {
       .then((res) => {
         res.json().then((data) => {
           setMovies(data?.data?.movies);
-          setmoviesList(data?.data?.movies);
-          const pagesAll = Math.floor(data?.data?.movie_count / 30) + 1
+          const pagesAll = Math.floor(data?.data?.movie_count / 30) + 1;
           setPages(pagesAll);
-          if(currentPage>pagesAll)setCurrentPage(pagesAll)
+          if (currentPage > pagesAll) setCurrentPage(pagesAll);
           setTimeout(() => {
             setLoading(false);
           }, 50);
-          
         });
       })
       .catch(() => {})
       .finally(() => {});
-  }, [currentPage,searchValue,selectedFilter]);
-
+  }, [currentPage, searchValue, selectedFilter]);
+useEffect(()=>{
+  setmoviesList(movies)
+},[movies])
   const search = (searchvalue) => {
     setSearchValue(searchvalue);
-    
   };
-  const filterHandler = (genreValue)=>{
+  const filterHandler = (genreValue) => {
     setSelectedFilter(genreValue);
-  }
+  };
   const showInfoHandler = (id) => {
     setShowInfo(true);
-    movies.forEach((movie) => {
+    moviesList.forEach((movie) => {
       if (movie.id === id) {
         setMovieToShowInfo(movie);
       }
@@ -145,6 +144,7 @@ function App() {
               })}
           </div>
         )}
+        {!showInfo && !moviesList && <div className="nomovies">Something went Wrong <FileMinus size={50} /></div>}
       </div>
     </div>
   );
