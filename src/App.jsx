@@ -15,7 +15,7 @@ function App() {
   const [pages, setPages] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [reload, setReload] = useState(false);
+
   useEffect(() => {
     setLoading(true);
     fetch(
@@ -28,21 +28,26 @@ function App() {
         res.json().then((data) => {
           setMovies(data?.data?.movies);
           setmoviesList(data?.data?.movies);
-          setPages(Math.floor(data?.data?.movie_count / 30) + 1);
+          const pagesAll = Math.floor(data?.data?.movie_count / 30) + 1
+          setPages(pagesAll);
+          if(currentPage>pagesAll)setCurrentPage(pagesAll)
           setTimeout(() => {
             setLoading(false);
-          }, 100);
+          }, 50);
+          
         });
       })
       .catch(() => {})
       .finally(() => {});
-  }, [currentPage, reload]);
+  }, [currentPage,searchValue,selectedFilter]);
 
-  const search = (searchvalue, genreValue) => {
+  const search = (searchvalue) => {
     setSearchValue(searchvalue);
-    setSelectedFilter(genreValue);
-    setReload(!reload);
+    
   };
+  const filterHandler = (genreValue)=>{
+    setSelectedFilter(genreValue);
+  }
   const showInfoHandler = (id) => {
     setShowInfo(true);
     movies.forEach((movie) => {
@@ -57,7 +62,7 @@ function App() {
 
   return (
     <div className="App">
-      {!showInfo && <Head onsearch={search}></Head>}
+      {!showInfo && <Head onsearch={search} onfilter={filterHandler}></Head>}
 
       {/*pages*/}
       {!showInfo && (

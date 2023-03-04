@@ -11,7 +11,6 @@ function Head(props) {
     false,
   ]);
   const [search, setSearch] = useState("");
-  const [genre, setGenre] = useState("all");
   return (
     <div className="head">
       <div className="search-container">
@@ -27,7 +26,7 @@ function Head(props) {
         <button
         className="search-btn"
           onClick={() => {
-            props.onsearch(search, genre);
+            props.onsearch(search);
           }}
         >
           <Search></Search>
@@ -38,7 +37,7 @@ function Head(props) {
           className={btnSelected[0] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([true, false, false, false, false, false]);
-            setGenre("all");
+            props.onfilter("all");
           }}
         >
           All
@@ -47,7 +46,7 @@ function Head(props) {
           className={btnSelected[1] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, true, false, false, false, false]);
-            setGenre("action");
+            props.onfilter("action");
           }}
         >
           Action
@@ -56,7 +55,7 @@ function Head(props) {
           className={btnSelected[2] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, false, true, false, false, false]);
-            setGenre("romance");
+            props.onfilter("romance");
           }}
         >
           Romance
@@ -65,7 +64,7 @@ function Head(props) {
           className={btnSelected[3] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, false, false, true, false, false]);
-            setGenre("comedy");
+            props.onfilter("comedy");
           }}
         >
           Comedy
@@ -74,7 +73,7 @@ function Head(props) {
           className={btnSelected[4] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, false, false, false, true, false]);
-            setGenre("drama");
+            props.onfilter("drama");
           }}
         >
           Drama
@@ -83,7 +82,7 @@ function Head(props) {
           className={btnSelected[5] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, false, false, false, false, true]);
-            setGenre("sci-Fi");
+            props.onfilter("sci-Fi");
           }}
         >
           Sci-Fi
