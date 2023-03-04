@@ -79,7 +79,7 @@
     margin-top: 1em;
     padding: 15px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 .info-controls a{
     display: flex;
@@ -97,13 +97,11 @@
 }
 .info-downloads{
     display: flex;
+    padding: 10px;
     gap: 1em;
 }
 .info-controls .torrent{
     background-color: rgb(136, 190, 95);
-}
-.info-controls .yt-trailer{
-    background-color: #FF0000;
 }
 .trailer{
     width: 100%;
@@ -119,13 +117,18 @@
 .notfound{
     width: 100%;
     font-size: 1.5em;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.404);
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background: linear-gradient(90deg,rgb(124, 124, 124),rgb(90, 89, 89),rgb(90, 89, 89),rgb(124, 124, 124));
-    box-shadow: 0 2px 3px 0px rgba(165, 165, 165, 0.226);
+    background: linear-gradient(90deg,rgb(124, 124, 124),rgb(90, 89, 89),rgb(124, 124, 124));
     gap: 0.5em;
+}
+.downloadtorrent{
+    width: 100%;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
 }

@@ -46,7 +46,9 @@ function MoreInfo(props) {
         ></iframe>
         </div> || <div className="notfound">No trailer was found <Frown size={30}/></div>}
       </div>
+     
       <div className="info-controls">
+      <div className="downloadtorrent">Download torrent:</div>
         <div className="info-downloads">
           {props.torrents.map((torrent, i) => {
             return (

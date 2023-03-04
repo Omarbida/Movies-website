@@ -57,11 +57,11 @@ function App() {
   };
   return (
     <div className="App">
-      <Head
+      {!showInfo && <Head
         fillter={fillter}
         filterHandler={getFilterHandler}
         onchange={searchValueHandler}
-      ></Head>
+      ></Head>}
       <div className="content">
         {showInfo && (
           <MoreInfo
