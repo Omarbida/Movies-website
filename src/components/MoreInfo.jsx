@@ -1,10 +1,11 @@
 import "./MoreInfo.css";
-import { ArrowLeftCircle, Heart, Youtube, Download } from "react-feather";
+import { ArrowLeftCircle, Heart, Youtube, Download , Frown} from "react-feather";
 
 function MoreInfo(props) {
   return (
     <div className="movie-info-all">
         
+      <div className="tr-info-container">
       <div
         style={{ backgroundImage: `url(${props.bg_img})` }}
         className="info-container"
@@ -43,7 +44,8 @@ function MoreInfo(props) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></iframe>
-        </div>}
+        </div> || <div className="notfound">No trailer was found <Frown size={30}/></div>}
+      </div>
       <div className="info-controls">
         <div className="info-downloads">
           {props.torrents.map((torrent, i) => {

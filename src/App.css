@@ -72,7 +72,7 @@ button.selected{
 .content{
   padding: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   gap: 10px;
 }
@@ -83,11 +83,11 @@ button.selected{
   flex-wrap: wrap;
  
 }
-.movies.sided {
-  width: 50%;
+/* .movies.sided {
+  width: 100%;
   overflow-y: scroll;
   height:1000px ;
  justify-content: center;
-}
+} */
 
 
