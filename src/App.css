@@ -50,7 +50,11 @@ body {
 .search-container button {
   height: 100%;
   background-color: transparent;
+  padding: 0 10px;
+  border-radius: 3px;
   border: none;
+  background-color: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.425);
 }
 .search-container button:hover {
   scale: 110%;
@@ -64,6 +68,7 @@ body {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.425);
   font-size: 1.3em;
 }
+
 .search-container input:focus {
   outline: none;
 }

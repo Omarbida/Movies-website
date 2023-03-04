@@ -25,6 +25,7 @@ function Head(props) {
           type={"search"}
         ></input>
         <button
+        className="search-btn"
           onClick={() => {
             props.onsearch(search, genre);
           }}
