@@ -11,20 +11,24 @@ function Head(props) {
     false,
   ]);
   const [search, setSearch] = useState("");
+  const [genre, setGenre] = useState("all");
   return (
     <div className="head">
       <div className="search-container">
         <input
           onChange={(e) => {
-            setSearch(e.target.value)
-            props.onchange(e.target.value)
+            setSearch(e.target.value);
           }}
           value={search}
           placeholder="Movie name..."
           name="name"
           type={"search"}
         ></input>
-        <button onClick={()=>{props.fillter()}}>
+        <button
+          onClick={() => {
+            props.onsearch(search, genre);
+          }}
+        >
           <Search></Search>
         </button>
       </div>
@@ -33,7 +37,7 @@ function Head(props) {
           className={btnSelected[0] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([true, false, false, false, false, false]);
-            props.filterHandler('All')
+            setGenre("all");
           }}
         >
           All
@@ -42,7 +46,7 @@ function Head(props) {
           className={btnSelected[1] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, true, false, false, false, false]);
-            props.filterHandler('Action')
+            setGenre("action");
           }}
         >
           Action
@@ -51,7 +55,7 @@ function Head(props) {
           className={btnSelected[2] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, false, true, false, false, false]);
-            props.filterHandler('Romance')
+            setGenre("romance");
           }}
         >
           Romance
@@ -60,7 +64,7 @@ function Head(props) {
           className={btnSelected[3] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, false, false, true, false, false]);
-            props.filterHandler('Comedy')
+            setGenre("comedy");
           }}
         >
           Comedy
@@ -69,7 +73,7 @@ function Head(props) {
           className={btnSelected[4] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, false, false, false, true, false]);
-            props.filterHandler('Drama')
+            setGenre("drama");
           }}
         >
           Drama
@@ -78,7 +82,7 @@ function Head(props) {
           className={btnSelected[5] ? "selected" : ""}
           onClick={() => {
             setButtonSelected([false, false, false, false, false, true]);
-            props.filterHandler('Sci-Fi')
+            setGenre("sci-Fi");
           }}
         >
           Sci-Fi
