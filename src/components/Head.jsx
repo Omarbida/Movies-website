@@ -17,6 +17,9 @@ function Head(props) {
         <input
           onChange={(e) => {
             setSearch(e.target.value);
+            if(e.target.value == ''){
+                props.onsearch('');
+            }
           }}
           value={search}
           placeholder="Movie name..."

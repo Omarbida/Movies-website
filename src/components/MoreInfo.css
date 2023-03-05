@@ -51,11 +51,12 @@
   font-size: 1.5em;
   text-align: center;
 }
-.info-discriptio {
+.info-discription {
   padding: 0 15px;
   color: rgb(255, 255, 255);
   line-height: 1.2em;
   font-size: 1.3em;
+  text-shadow: 0 0 2px black;
 }
 .info-rating {
   width: 10%;

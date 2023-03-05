@@ -32,7 +32,7 @@ function MoreInfo(props) {
           </div>
 
           <div className="buffer"></div>
-          <div className="info-discriptio">{props.discription}</div>
+          <div className="info-discription">{props.discription}</div>
           <div className="genres">
             {props.genres.map((x, i) => {
               return <div key={i}>{x}/</div>;

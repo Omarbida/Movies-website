@@ -17,7 +17,7 @@ function Card(props) {
       className="card"
     >
       <div className="bg-div">
-        <img src={props.medium_cover_image}></img>
+        <img src={props.medium_cover_image} loading='lazy'></img>
         <div className="absolute-container">
           <div className="rating">{props.rating}</div>
           <div className="year">{props.year}</div>
