@@ -17,7 +17,13 @@ function Card(props) {
       className="card"
     >
       <div className="bg-div">
-        <img src={props.medium_cover_image} loading='lazy'></img>
+        <img src={props.medium_cover_image?  props.medium_cover_image : 'default_cover.jpg'} loading='lazy'
+        
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null; // prevents looping
+          currentTarget.src="default_cover.jpg";
+        }}
+        ></img>
         <div className="absolute-container">
           <div className="rating">{props.rating}</div>
           <div className="year">{props.year}</div>

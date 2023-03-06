@@ -2,11 +2,13 @@
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 5px;
   overflow: hidden;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.493);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.541);
+  
 }
 .card:hover {
   scale: 110%;
+  cursor: pointer;
 }
 .bg-div {
   position: relative;
@@ -19,8 +21,10 @@
   font-size: 1.5em;
   display: flex;
   width: 100%;
+  background-color: #0000008c;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.678);
   padding: 0 10px;
-  top: 90%;
+  top: 10px;
   justify-content: space-between;
   z-index: 1;
   color: rgb(238, 5, 56);
@@ -31,20 +35,20 @@
   max-width: 230px;
   padding: 5px;
   font-size: 1.3em;
+  color: white;
+  text-shadow: 0 0 3px black;
 }
 .over-lay {
   position: absolute;
   top: 0;
   font-size: 1.2em;
   padding: 10px;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
   height: 100%;
   z-index: 2;
-  background-color: rgba(128, 128, 128, 0.349);
-  cursor: default;
+  background-color: transparent;
   overflow-y: auto;
-  /* display: flex;
-    align-items: center;
-    justify-content: center; */
   transition: all 0.2s ease-in-out;
+  font-weight: 600;
+  text-shadow: 0 0 2px rgb(255, 255, 255);
 }

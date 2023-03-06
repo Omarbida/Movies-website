@@ -27,6 +27,7 @@
 }
 .info-header {
   background-color: #0000008c;
+  box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.678);
   color: #fff;
   position: absolute;
   top: 15px;
@@ -34,7 +35,7 @@
   display: flex;
   justify-content: center;
   padding: 10px 0;
-  box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.678);
+  
 }
 .info-back-btn {
   left: 10px;
