@@ -8,6 +8,19 @@ body {
   background-color: rgb(124, 124, 124);
   position: relative;
 }
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+ 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #000000; 
+}
 
 .content {
   padding: 10px;

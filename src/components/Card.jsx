@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Card.css";
 
 function Card(props) {
-  const [moseover, setMousover] = useState(false);
+  const [mouseover, setMousover] = useState(false);
   return (
     <div
       onClick={() => {
@@ -28,7 +28,7 @@ function Card(props) {
           <div className="rating">{props.rating}</div>
           <div className="year">{props.year}</div>
         </div>
-        {moseover && <div className="over-lay">{props.summary}</div>}
+        {mouseover && <div className="over-lay">{props.summary}</div>}
       </div>
       <div className="title">{props.title}</div>
     </div>
